@@ -4,6 +4,9 @@
   become: yes
   become_method: sudo
   tasks:
+    - name: Install Python-apt
+      apt: name=python-apt state=latest
+
     - name: Install pip
       apt: name=python-pip state=present
 
