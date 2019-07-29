@@ -12,13 +12,13 @@
 
     - name: Build Docker image from Dockerfile
       docker_image:
-        name: web
+        name: devops_pipeline_demo
         path: docker
         state: build
         
     - name: Running the container
       docker_container:
-        image: web:latest
+        image: devops_pipeline_demo:latest
         path: docker
         state: running
 
