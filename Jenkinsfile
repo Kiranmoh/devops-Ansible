@@ -31,7 +31,8 @@ pipeline {
        stage('Ansible deployment to host') {
             steps {
                 echo '..... Initiating ansible deployment to host system :: ......'
-                sh 'ansible-playbook -i hosts main.yml --ask-become-pass'
+                //sh 'ansible-playbook -i hosts main.yml --ask-become-pass'
+                  sh 'ansible-playbook -i hosts main.yml --extra-vars "ansible_user=jenkins ansible_password=Appuzz@2019" '
                   }
         }
                     
