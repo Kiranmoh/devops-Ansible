@@ -46,7 +46,7 @@
         name: devops_pipeline_demo
         build:
           path: docker
-        force_source: false
+          force_source: true
         state: present
         
     - name: Running the container
