@@ -47,6 +47,7 @@
         build:
           path: docker
           force_source: true
+          source: build
         state: present
         
     - name: Running the container
