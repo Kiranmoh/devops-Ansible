@@ -44,8 +44,8 @@
     - name: Build Docker image from Dockerfile
       docker_image:
         name: devops_pipeline_demo
-        path: docker
-        state: build
+        build.path: docker
+        state: present
         
     - name: Running the container
       docker_container:
