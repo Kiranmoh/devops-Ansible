@@ -43,10 +43,10 @@
 
     - name: Build Docker image from Dockerfile
       docker_image:
+        force_source: yes
         name: devops_pipeline_demo
         build:
           path: docker
-          force_source: true
         state: present
         
     - name: Running the container
