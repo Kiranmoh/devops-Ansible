@@ -10,6 +10,37 @@
     - name: install docker-py package
       pip: name=docker-py
 
+    - name: Update all packages
+      yum:
+        name: '*'
+        state: latest
+        update_only: yes
+
+    - name: Ensure a list of yum packages are installed
+      yum:
+        name: "{{ packages }}"
+        state: latest
+        update_cache: yes
+      vars:
+        packages:
+        - python-pip
+        - yum-utils
+        - device-mapper-persistent-data
+        - lvm2
+        - amazon-linux-extras
+
+    - name: Add extras repository
+      shell: yum-config-manager --enable extras
+
+    - name: Install docker via amazon-linux-extras packages
+      shell: "amazon-linux-extras install docker=latest -y"
+
+    - name: Enable Docker CE service at startup
+      service:
+        name: docker
+        state: started
+        enabled: yes
+
     - name: Build Docker image from Dockerfile
       docker_image:
         name: devops_pipeline_demo
