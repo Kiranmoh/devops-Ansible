@@ -46,7 +46,7 @@
         name: devops_pipeline_demo
         build:
           path: docker
-        state: present
+          state: present
         
     - name: Running the container
       docker_container:
