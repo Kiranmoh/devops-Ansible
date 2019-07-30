@@ -46,7 +46,7 @@
         name: devops_pipeline_demo
         build:
           path: docker
-          nocache: true
+          force_source: true
         state: present
         
     - name: Running the container
