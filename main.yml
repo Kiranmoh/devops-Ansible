@@ -45,7 +45,7 @@
       docker_image:
         name: devops_pipeline_demo
         build:
-          path: docker
+          path: /var/lib/jenkins/workspace/Pipeline-Ansible/docker
           pull: false
         force_source: true
         source: build
