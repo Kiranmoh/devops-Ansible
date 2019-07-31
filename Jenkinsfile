@@ -32,7 +32,7 @@ pipeline {
             steps {
                 echo '..... Initiating ansible deployment to host system :: ......'
                 //sh 'ansible-playbook -i hosts main.yml --ask-become-pass'
-                  sh 'export ANSIBLE_HOST_KEY_CHECKING=False && ansible-playbook -i hosts main.yml --extra-vars "ansible_user=jenkins ansible_password=Appuzz@2019" '
+                  sh 'cd docker && export ANSIBLE_HOST_KEY_CHECKING=False && ansible-playbook -i hosts main.yml --extra-vars "ansible_user=jenkins ansible_password=Appuzz@2019" '
                   }
         }
                     
